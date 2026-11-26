@@ -36,7 +36,7 @@
     </div>
 
     <ul class="m ul">
-            {{ range first $.Site.Params.threads_preview_count ($group.Pages.ByParam "order") }}
+            {{ range ($group.Pages.ByParam "order") }}
         <li class="fl aliI-CE thread-item por" data-read="false" data-uid="{{ path.Base .File.Dir  }}-{{ .File.BaseFileName }}">
 
             <div class="thread-number-ini">
@@ -80,11 +80,6 @@
         {{ end }}
 
     </ul>
-    {{ if gt (len $group.Pages) $.Site.Params.threads_preview_count }}
-    <a href="{{ $group.RelPermalink }}" class="more-threads disp-B txt-C">
-       مشاهده {{ sub (len $group.Pages) $.Site.Params.threads_preview_count }} تِرِد دیگه
-    </a>
-  {{ end }}
 </div>
 {{ end }}
 

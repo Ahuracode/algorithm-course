@@ -13,7 +13,6 @@
 
 
 {{ $threads := .Pages.ByParam "order" }}
-{{ $paginator := .Paginate $threads $.Site.Params.thread.threads_per_page }}
 
 <div class="thread-group" data-status="{{ .Params.group_status }}">
     <div class="h fl aliI-CE jusCo-SP">
@@ -39,7 +38,7 @@
 
     <ul class="m ul">
 
-             {{ range $paginator.Pages }}
+             {{ range $threads }}
         <li class="fl aliI-CE thread-item por" data-read="false" data-uid="{{ path.Base .File.Dir  }}-{{ .File.BaseFileName }}">
 
             <div class="thread-number-ini">
@@ -85,17 +84,6 @@
     </ul>
 </div>
         </main>
-        {{if or $paginator.HasPrev $paginator.HasNext}}
-        <div class="ph fl aliI-CE jusCo-SP mrg-T15">
-        {{ if $paginator.HasPrev }}
-            <a href="{{ $paginator.Prev.URL }}" title="صفحه قبل" class="disp-B">قبلی</a>
-        {{ end }}
-
-        {{ if $paginator.HasNext }}
-            <a href="{{ $paginator.Next.URL }}" title="صفحه بعد" class="disp-B">بعدی</a>
-        {{ end }}
-        </div>
-        {{end}}
     </section>
 
 
