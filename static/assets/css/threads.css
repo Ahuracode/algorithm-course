@@ -700,28 +700,13 @@ div#modal-media img {
 }
 
 
-/* تردهای اضافه‌ی هر فصل (بعد از ۵ تای اول) تا وقتی دکمه‌ی «مشاهده تِرِد دیگه» زده
-   نشده مخفی‌اند؛ با کلاس expanded روی گروه، همان‌جا نمایش داده می‌شوند */
-.thread-item.thread-extra {
-    display: none;
-}
-
-.thread-group.expanded .thread-item.thread-extra {
-    display: flex;
-}
-
-.more-threads {
-    display: block;
-    width: 100%;
+a.more-threads {
     padding: 20px;
-    border: none;
-    border-top: 2px solid var(--c-border-main);
     border-radius: 0 0 12px 12px;
-    font: inherit;
     font-weight: 600;
     background: var(--c-bg-light);
     color: var(--c-text-main);
-    cursor: pointer;
+    border-top: 2px solid var(--c-border-main);
 }
 
 .timg {
