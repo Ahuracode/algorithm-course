@@ -35,9 +35,10 @@
         </div>
     </div>
 
+    {{ $preview := $.Site.Params.threads_preview_count }}
     <ul class="m ul">
-            {{ range first $.Site.Params.threads_preview_count ($group.Pages.ByParam "order") }}
-        <li class="fl aliI-CE thread-item por" data-read="false" data-uid="{{ path.Base .File.Dir  }}-{{ .File.BaseFileName }}">
+            {{ range $i, $page := ($group.Pages.ByParam "order") }}
+        <li class="fl aliI-CE thread-item por{{ if ge $i $preview }} thread-extra{{ end }}" data-read="false" data-uid="{{ path.Base .File.Dir  }}-{{ .File.BaseFileName }}">
 
             <div class="thread-number-ini">
                 {{ printf "%02d" .Params.order }}
@@ -81,9 +82,11 @@
 
     </ul>
     {{ if gt (len $group.Pages) $.Site.Params.threads_preview_count }}
-    <a href="{{ $group.RelPermalink }}" class="more-threads disp-B txt-C">
+    <button type="button" class="more-threads disp-B txt-C" data-expand-btn
+        data-more-text="مشاهده {{ sub (len $group.Pages) $.Site.Params.threads_preview_count }} تِرِد دیگه"
+        data-less-text="نمایش کمتر">
        مشاهده {{ sub (len $group.Pages) $.Site.Params.threads_preview_count }} تِرِد دیگه
-    </a>
+    </button>
   {{ end }}
 </div>
 {{ end }}
@@ -109,5 +112,6 @@
 {{ if .Site.Params.dark_mode.enabled }}<script src="{{ "assets/js/darkmode.js" | relURL }}"></script>{{ end }}
 <script src="{{ "assets/js/modal.js" | relURL }}"></script>
 <script src="{{ "assets/js/isread.js" | relURL }}"></script>
+<script src="{{ "assets/js/expand-threads.js" | relURL }}"></script>
 </body>
 </html>
