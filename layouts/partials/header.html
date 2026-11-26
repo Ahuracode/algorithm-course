@@ -2,14 +2,14 @@
             {{ if eq .Kind "section" }}
             <h1 class="mrg0 logo-txt por">
                 {{ .Site.Title }}
-                <a href="/" title="{{ .Site.Title }}" class="farhana">
+                <a href="{{ "" | relURL }}" title="{{ .Site.Title }}" class="farhana">
                     <span class="sonly">{{ .Site.Title }}</span>
                 </a>
             </h1>
              {{ else }}
              <h4 class="mrg0 logo-txt por">
                 {{ .Site.Title }}
-                <a href="/threads" title="{{ .Site.Title }}" class="farhana">
+                <a href="{{ "threads" | relURL }}" title="{{ .Site.Title }}" class="farhana">
                     <span class="sonly">{{ .Site.Title }}</span>
                 </a>
             </h4>
@@ -38,7 +38,7 @@
                     <svg  viewBox="0 0 512 512">
                         <use href="#_BACK_ICON" xlink:href="#_BACK_ICON"></use>
                     </svg>
-                    <a href="/threads" title="بازگشت" class="farhana">
+                    <a href="{{ "threads" | relURL }}" title="بازگشت" class="farhana">
                         <span class="sonly">بازگشت به صفحه لیست تِرِد ها</span>
                     </a>
                 </div>

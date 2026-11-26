@@ -1,4 +1,4 @@
-baseURL = "https://example.org"
+baseURL = "https://ahuracode.github.io/algorithm-course/"
 languageCode = "fa-ir"
 # بهتره که به این شکل باشه : اسم مبحث + به سبک تِرِد 
 # مثلا : شبکه به سبک تِرِد
@@ -46,7 +46,7 @@ name = "اهورا"
 # بیوگرافی کوتاه نویسنده که زیر اسمش نمایش داده میشه
 bio = "نویسنده‌ی دوره‌ی الگوریتم به سبک ترد"
 # آدرس عکس پروفایل نویسنده 
-avatar = "/assets/static-pic/avatar.png"
+avatar = "assets/static-pic/avatar.png"
 # لینک صفحه دونیت یا حمایت مالی
 donate_url = "#"
 
@@ -101,7 +101,7 @@ share_text = "سلام دوستان! ترد '{title}' رو بخونید، خیل
 # تعداد ترد در هر صفحه مربوط به اون فصل مثلا : /threads/chapter1
 threads_per_page = 5
 # آدرس عکس تبریک (بعد از خوندن ترد)
-congrats_image = "/assets/static-pic/congrat.gif"
+congrats_image = "assets/static-pic/congrat.gif"
 
 # ===========================================
 # دست نزن به این بخش برادر من خب...

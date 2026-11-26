@@ -13,7 +13,7 @@
 
 
             <p class="mrg0 info">
-                <img src="/assets/static-pic/thread.png" alt="تصویر thread">
+                <img src="{{ "assets/static-pic/thread.png" | relURL }}" alt="تصویر thread">
 
                 <strong class="disp-B">تِرِد چیست؟</strong>
 
@@ -62,7 +62,7 @@
                     </a>
                     {{ else }}
 
-                        <a href="/threads/" class="CTAbutton disp-B">شروع یادگیری رایگان</a>
+                        <a href="{{ "threads/" | relURL }}" class="CTAbutton disp-B">شروع یادگیری رایگان</a>
                     {{ end }}
                 </div>
             </p>
@@ -73,7 +73,7 @@
         <section class="fl aliI-CE jusCo-SP mrg-T15" id="_bannerFooter">
 
             <div class="fl">
-                <img src="/assets/static-pic/cs12-icon.png" alt="تصویر پروفایل" class="disp-B borOK" width="45" height="45">
+                <img src="{{ "assets/static-pic/cs12-icon.png" | relURL }}" alt="تصویر پروفایل" class="disp-B borOK" width="45" height="45">
                 <p class="mrg0">
                     <span class="disp-B">نوشته شده توسط</span>
                     <b>CS12</b>
@@ -91,7 +91,7 @@
 </section>
 {{ partial "modal.html" . }}
 {{ partial "svgs.html" . }}
-{{ if .Site.Params.dark_mode.enabled }}<script src="/assets/js/darkmode.js"></script>{{ end }}
-<script src="/assets/js/modal.js"></script>
+{{ if .Site.Params.dark_mode.enabled }}<script src="{{ "assets/js/darkmode.js" | relURL }}"></script>{{ end }}
+<script src="{{ "assets/js/modal.js" | relURL }}"></script>
 </body>
-</html>
+</html>

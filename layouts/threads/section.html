@@ -1,5 +1,5 @@
 {{ if eq .Section "threads" }}
-    {{ if eq .RelPermalink "/threads/" }}
+    {{ if eq .RelPermalink ("threads/" | relURL) }}
         {{ partial "list-threads.html" . }}
     {{ else if not .Draft }}
         {{ partial "list-sections.html" . }}

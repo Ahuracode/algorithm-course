@@ -16,7 +16,7 @@
              </div>
             <main>
                 {{ if .Params.image }}
-                <img src="/assets/img/{{.Params.image}}" alt="تصویر: اوپس 502" title="{{.Title}}" class="disp-B timg">
+                <img src="{{ (printf "assets/img/%s" .Params.image) | relURL }}" alt="تصویر: اوپس 502" title="{{.Title}}" class="disp-B timg">
                 {{ end }}
                 <article class="thread-detail fl" style="flex-direction: column; gap: 15px;"
                     data-uid="{{ path.Base .File.Dir  }}-{{ .File.BaseFileName }}"
@@ -29,12 +29,12 @@
                             data-tooltip-text="پروفایل نویسنده"  
                             data-modal
                             data-modal-type="image"
-                            data-src="{{ .Site.Params.author.avatar }}"
+                            data-src="{{ .Site.Params.author.avatar | relURL }}"
                             data-modal-title="در مورد نویسنده"
                             data-modal-text="{{ .Site.Params.author.bio }}"
                             data-modal-social='{{ .Site.Params.author.social.social_links | jsonify }}'
                        >
-                            <img src="{{ .Site.Params.author.avatar }}" alt="اوپس: تصویر 502" title="تصویر پروفایل نویسنده" class="disp-B borOK" width="50" height="50" />
+                            <img src="{{ .Site.Params.author.avatar | relURL }}" alt="اوپس: تصویر 502" title="تصویر پروفایل نویسنده" class="disp-B borOK" width="50" height="50" />
                         </div>
                         <div class="x">
                             <b class="disp-B"> {{ .Site.Params.author.name }} </b>
@@ -124,7 +124,7 @@
                         data-unmark-text="{{ .Site.Params.thread.marked_read_text }}"
                         data-congrats-title="{{ .Site.Params.thread.congrats_title }}"
                         data-congrats-text="{{ .Site.Params.thread.congrats_text }}"
-                        data-congrats-image="{{ .Site.Params.thread.congrats_image }}"
+                        data-congrats-image="{{ .Site.Params.thread.congrats_image | relURL }}"
                     >
                          {{ .Site.Params.thread.mark_read_text }}
                     </button>
@@ -197,9 +197,9 @@
         {{ partial "svgs.html" . }}
         {{ partial "modal.html" . }}
         {{ partial "footer.html" . }}
-        {{ if .Site.Params.dark_mode.enabled }}<script src="/assets/js/darkmode.js"></script>{{ end }}
-        <script src="/assets/js/isread.js"></script>
-        <script src="/assets/js/modal.js"></script>
-        <script src="/assets/js/github-contributors.js"></script>
+        {{ if .Site.Params.dark_mode.enabled }}<script src="{{ "assets/js/darkmode.js" | relURL }}"></script>{{ end }}
+        <script src="{{ "assets/js/isread.js" | relURL }}"></script>
+        <script src="{{ "assets/js/modal.js" | relURL }}"></script>
+        <script src="{{ "assets/js/github-contributors.js" | relURL }}"></script>
     </body>
 </html>

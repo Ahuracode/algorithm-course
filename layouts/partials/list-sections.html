@@ -54,18 +54,18 @@
                         data-tooltip-text="پروفایل نویسنده"  
                         data-modal
                         data-modal-type="image"
-                        data-src="{{ .Site.Params.author.avatar }}"
+                        data-src="{{ .Site.Params.author.avatar | relURL }}"
                         data-modal-title="در مورد نویسنده"
                         data-modal-text="{{ .Site.Params.author.bio }}"
                         data-modal-social='{{ .Site.Params.author.social.social_links | jsonify }}'
                    >
-                    <img src="{{ .Site.Params.author.avatar }}" alt="اوپس: تصویر 502" title="تصویر پروفایل نویسنده" class="disp-B borOK" width="35" height="35" />
+                    <img src="{{ .Site.Params.author.avatar | relURL }}" alt="اوپس: تصویر 502" title="تصویر پروفایل نویسنده" class="disp-B borOK" width="35" height="35" />
                 </div>
                 <div class="svg-cont por zin5 clickable"
                     data-tooltip-text = "به اشتراک بگذار"
                     data-modal
                     data-modal-type="share"
-                    data-src="{{ .Site.BaseURL }}{{ .RelPermalink }}"
+                    data-src="{{ .RelPermalink | absURL }}"
                     data-modal-title="به اشتراک بگذارید"
                     data-modal-text="{{ replace $.Site.Params.thread.share_text "{title}" .Title }}">
 
@@ -102,8 +102,8 @@
 
 {{ partial "svgs.html" . }}
 {{ partial "modal.html" . }}
-{{ if .Site.Params.dark_mode.enabled }}<script src="/assets/js/darkmode.js"></script>{{ end }}
-<script src="/assets/js/modal.js"></script>
-<script src="/assets/js/isread.js"></script>
+{{ if .Site.Params.dark_mode.enabled }}<script src="{{ "assets/js/darkmode.js" | relURL }}"></script>{{ end }}
+<script src="{{ "assets/js/modal.js" | relURL }}"></script>
+<script src="{{ "assets/js/isread.js" | relURL }}"></script>
 </body>
 </html>
