@@ -136,10 +136,23 @@ branch = "content"
 # ===========================================
 
 [params.giscus]
-# اسکریپتی که از giscus گرفتید رو اینجا پیست کنید
+# اسکریپت giscus — سیستم نظرات دوره (۲۷ نوامبر ۲۰۲۶)
+# repo: Ahuracode/algorithm-course — Discussions فعال شد و دسته‌ی Announcements برای نظرات انتخاب شد
 script = '''
-
-# جای اسکریپتتون این کامنت رو پاک کنید و اسکریپت رو اینجا بزارید.
-
+<script src="https://giscus.app/client.js"
+        data-repo="Ahuracode/algorithm-course"
+        data-repo-id="R_kgDOV7zwVA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOV7zwVM4DMFKL"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="fa"
+        crossorigin="anonymous"
+        async>
+</script>
 '''
 
